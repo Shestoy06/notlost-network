@@ -1,2 +1,2 @@
 # NotLost Network
-### Enhcance your telegram experience
+### Enhance your telegram experience
