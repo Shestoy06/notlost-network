@@ -8,6 +8,7 @@ import {
 } from "jazz-react";
 import {useNavigate} from "@tanstack/react-router";
 import {APP_NAME} from "../utils/const";
+import {DemoAuthBasicUI, useDemoAuth} from "jazz-react";
 
 const Jazz = createJazzReactApp<UserAccount>({
   AccountSchema: UserAccount,
@@ -33,7 +34,7 @@ const JAZZ_PEER_URL = (() => {
 })()
 
 export function JazzAndAuth({ children }: { children: React.ReactNode }) {
-  const [auth, authState] = usePasskeyAuth({appName: APP_NAME});
+  /*const [auth, authState] = usePasskeyAuth({appName: APP_NAME});
 
   const navigate = useNavigate();
 
@@ -41,7 +42,9 @@ export function JazzAndAuth({ children }: { children: React.ReactNode }) {
     if (authState.state !== "signedIn") {
       navigate({ to: '/onboarding' });
     }
-  }, [authState, navigate]);
+  }, [authState, navigate]);*/
+
+  const [auth, authState] = useDemoAuth()
 
   return (
     <>
@@ -51,6 +54,9 @@ export function JazzAndAuth({ children }: { children: React.ReactNode }) {
       >
         {children}
       </Jazz.Provider>
+      {authState.state !== "signedIn" && (
+        <DemoAuthBasicUI appName="Jazz Book Shelf" state={authState} />
+      )}
     </>
   );
 }
