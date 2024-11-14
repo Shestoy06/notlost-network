@@ -1,1 +1,1 @@
-export const APP_NAME = 'NotLost Network'
+export const APP_NAME = 'NotLost Network';

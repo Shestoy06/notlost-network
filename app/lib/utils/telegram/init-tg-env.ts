@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   backButton,
@@ -26,12 +26,13 @@ export function initTgEnv(debug: boolean): void {
   miniApp.mount();
   themeParams.mount();
   initData.restore();
-  viewport.mount()
+  viewport
+    .mount()
     .then(() => {
-      console.log("Viewport mounted successfully");
-      viewport.bindCssVars();  // Bind CSS vars to viewport
-      miniApp.bindCssVars();  // Bind CSS vars to miniApp
-      themeParams.bindCssVars();  // Bind CSS vars to themeParams
+      console.log('Viewport mounted successfully');
+      viewport.bindCssVars(); // Bind CSS vars to viewport
+      miniApp.bindCssVars(); // Bind CSS vars to miniApp
+      themeParams.bindCssVars(); // Bind CSS vars to themeParams
     })
     .catch((e) => {
       console.error('Something went wrong mounting the viewport', e);
@@ -39,5 +40,4 @@ export function initTgEnv(debug: boolean): void {
 
   // Define components-related CSS variables.
   // Once mounted, bind CSS variables
-
 }

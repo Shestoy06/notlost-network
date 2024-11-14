@@ -4,4 +4,13 @@
 
 body {
     background: var(--tg-theme-bg-color, white);
+    overscroll-behavior: none !important;
+}
+
+/* Resetting telegram ui components specific styles */
+
+/* Input vertical padding */
+.tgui-8ca550c2fc85eff5 {
+    padding-right: 0;
+    padding-left: 0;
 }

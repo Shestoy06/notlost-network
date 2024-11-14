@@ -5,7 +5,7 @@ import {
   parseInitData,
   retrieveLaunchParams,
 } from '@telegram-apps/sdk-react';
-import {useClientOnce} from "./use-client-once";
+import { useClientOnce } from './use-client-once';
 
 /**
  * Mocks Telegram environment in development mode.
@@ -24,16 +24,22 @@ export function useTelegramMock(): void {
       lp = retrieveLaunchParams();
     } catch (e) {
       const initDataRaw = new URLSearchParams([
-        ['user', JSON.stringify({
-          id: 99281932,
-          first_name: 'Andrew',
-          last_name: 'Rogue',
-          username: 'rogue',
-          language_code: 'en',
-          is_premium: true,
-          allows_write_to_pm: true,
-        })],
-        ['hash', '89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31'],
+        [
+          'user',
+          JSON.stringify({
+            id: 99281932,
+            first_name: 'Andrew',
+            last_name: 'Rogue',
+            username: 'rogue',
+            language_code: 'en',
+            is_premium: true,
+            allows_write_to_pm: true,
+          }),
+        ],
+        [
+          'hash',
+          '89d6079ad6762351f38c6dbbc41bb53048019256a9443988af7a48bcad16ba31',
+        ],
         ['auth_date', '1716922846'],
         ['start_param', 'debug'],
         ['chat_type', 'sender'],
@@ -60,7 +66,7 @@ export function useTelegramMock(): void {
         initDataRaw,
         version: '8',
         platform: 'tdesktop',
-      }
+      };
     }
 
     sessionStorage.setItem('env-mocked', '1');
