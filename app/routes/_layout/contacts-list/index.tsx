@@ -16,6 +16,8 @@ export interface NodeBody {
   username: string;
   description?: string;
   tags?: Tag[];
+  topic?: string;
+  type?: string;
   createdAt: Date;
 }
 
@@ -105,15 +107,13 @@ const Index = () => {
           />
         </div>
       </div>
-      <div
-        className="pb-16"
-        style={{ marginTop: filtersBlockHeight }}
-      >
-        {filteredData.map((node) => (
-          <Contact node={node} key={node.id} />
-        ))}
+      <div className="pb-16" style={{ marginTop: filtersBlockHeight }}>
+        {filteredData.map((node) => {
+          if (node.type === 'topic') return;
+          return <Contact node={node} key={node.id} />;
+        })}
       </div>
-      <Pencil/>
+      <Pencil />
     </div>
   );
 };

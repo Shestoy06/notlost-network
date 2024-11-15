@@ -1,13 +1,23 @@
 {
   "nodes": [
-    { "id": "A", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "shestaya_liniya", "description": "Fullstack developer",
-      "tags": [{"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"}]
+    { "id": "Felix", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "shestaya_liniya", "description": "Fullstack developer","topic": "Ton Hackathon 2024",
+      "tags": [
+        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "blockchain", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "web3", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "web3", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "blockchain", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
+        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"}
+      ]
     },
     { "id": "B", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Max" },
     { "id": "C", "group": 2, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Dima" },
     { "id": "D", "group": 2, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Misha" },
     { "id": "E", "group": 2, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Sasha" },
-    { "id": "Hackathon", "group": 2, "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_s4hzT31Pte691BvjmzSisxWjjRGLuGPG_g&s", "username": "Hackathon", "size": 15 },
+    { "id": "Hackathon", "group": 2, "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_s4hzT31Pte691BvjmzSisxWjjRGLuGPG_g&s", "username": "Hackathon", "size": 15, "type": "topic" },
     { "id": "F", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Alex" },
     { "id": "G", "group": 3, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Nina" },
     { "id": "H", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "John" },
@@ -47,7 +57,7 @@
     { "id": "A17", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
     { "id": "A18", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
     { "id": "A19", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
-    { "id": "Hackathon 2", "group": 2, "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_s4hzT31Pte691BvjmzSisxWjjRGLuGPG_g&s", "username": "Hackathon", "size": 15 },
+    { "id": "Hackathon 2", "group": 2, "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_s4hzT31Pte691BvjmzSisxWjjRGLuGPG_g&s", "username": "Hackathon", "size": 15, "type": "topic" },
     { "id": "B1", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
     { "id": "B2", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
     { "id": "B3", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Jack" },
@@ -60,7 +70,7 @@
     { "source": "Hackathon", "target": "C", "color": "#0098EA" },
     { "source": "Hackathon", "target": "D", "color": "#0098EA" },
     { "source": "Hackathon", "target": "E", "color": "#0098EA" },
-    { "source": "Hackathon", "target": "A", "color": "#0098EA" },
+    { "source": "Hackathon", "target": "Felix", "color": "#0098EA" },
     { "source": "Hackathon", "target": "G", "color": "#0098EA" },
     { "source": "Hackathon", "target": "I", "color": "#0098EA" },
     { "source": "Hackathon", "target": "K", "color": "#0098EA" },
@@ -71,7 +81,7 @@
     { "source": "Hackathon", "target": "U", "color": "#0098EA" },
     { "source": "Hackathon", "target": "W", "color": "#0098EA" },
     { "source": "Hackathon", "target": "Y", "color": "#0098EA" },
-    { "source": "Hackathon", "target": "A", "color": "#0098EA" },
+    { "source": "Hackathon", "target": "Felix", "color": "#0098EA" },
     { "source": "Hackathon", "target": "F", "color": "#0098EA" },
     { "source": "Hackathon", "target": "H", "color": "#0098EA" },
     { "source": "Hackathon", "target": "J", "color": "#0098EA" },
