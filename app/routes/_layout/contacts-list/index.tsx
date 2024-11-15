@@ -74,10 +74,10 @@ const Index = () => {
   );
 
   return (
-    <div className="p-4">
+    <div className="py-4">
       <div
         ref={filtersBlock}
-        className="pb-4 fixed z-50 w-full bg-primary -mt-4 -ml-4 pl-4 pr-4 shadow-lg border-b-primary border-b-[1px]"
+        className="pb-4 fixed z-50 w-full bg-primary -mt-4 pl-4 pr-4 shadow-lg border-b-primary border-b-[1px]"
       >
         <FilterBySearch
           value={searchState}
@@ -106,8 +106,8 @@ const Index = () => {
         </div>
       </div>
       <div
-        className="space-y-2 pb-16"
-        style={{ marginTop: filtersBlockHeight + 16 }}
+        className="pb-16"
+        style={{ marginTop: filtersBlockHeight }}
       >
         {filteredData.map((node) => (
           <Contact node={node} key={node.id} />
