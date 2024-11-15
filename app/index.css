@@ -14,3 +14,16 @@ body {
     padding-right: 0;
     padding-left: 0;
 }
+
+/* Make small button full rounded */
+.tgui-13f23a224303ddaa {
+    border-radius: 50%;
+    padding: 8px;
+    height: 52px;
+    width: 52px;
+}
+
+/* Make plain button text color primary */
+.tgui-48956537c34690db {
+    color: var(--tg-theme-text-color);
+}

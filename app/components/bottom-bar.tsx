@@ -46,7 +46,7 @@ const BottomBarLink: React.FC<BottomBarLinkProps> = ({ to, title, Icon }) => {
             />
           </div>
           <span
-            className={`font-medium transition-all duration-150 ease-in-out capitalize mt-2 ${isActive && 'px-2 rounded-2xl text-accent'}`}
+            className={`font-medium transition-all duration-150 ease-in-out capitalize ${isActive && 'px-2 rounded-2xl text-accent'}`}
           >
             {title}
           </span>

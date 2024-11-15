@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import mockData from '@/lib/utils/graph-demo-data.json';
 import { createFileRoute } from '@tanstack/react-router';
 import {
@@ -7,6 +7,7 @@ import {
   FilterByTag,
 } from '@/routes/_layout/contacts-list/-filters';
 import { Contact } from '@/routes/_layout/contacts-list/-contact';
+import { Pencil } from '@/routes/_layout/contacts-list/-pencil';
 
 export interface NodeBody {
   id: string;
@@ -31,6 +32,16 @@ const Index = () => {
   const [filterState, setFilterState] = useState<FilterOptions[]>([]);
   const [searchState, setSearchState] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
+
+  const filtersBlock = useRef<HTMLDivElement>(null);
+  const [filtersBlockHeight, setFiltersBlockHeight] = useState<number>(0);
+
+  useEffect(() => {
+    if (filtersBlock.current) {
+      setFiltersBlockHeight(filtersBlock.current.offsetHeight);
+    }
+  }, []);
+
   const data = [...mockData.nodes] as NodeBody[];
 
   const filteredData = data
@@ -64,7 +75,10 @@ const Index = () => {
 
   return (
     <div className="p-4">
-      <div className="mb-6">
+      <div
+        ref={filtersBlock}
+        className="pb-4 fixed z-50 w-full bg-primary -mt-4 -ml-4 pl-4 pr-4 shadow-lg border-b-primary border-b-[1px]"
+      >
         <FilterBySearch
           value={searchState}
           onChange={(value: string) => setSearchState(value)}
@@ -91,11 +105,15 @@ const Index = () => {
           />
         </div>
       </div>
-      <div className="space-y-2 mt-4 pb-16">
+      <div
+        className="space-y-2 pb-16"
+        style={{ marginTop: filtersBlockHeight + 16 }}
+      >
         {filteredData.map((node) => (
           <Contact node={node} key={node.id} />
         ))}
       </div>
+      <Pencil/>
     </div>
   );
 };

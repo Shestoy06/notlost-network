@@ -4,11 +4,7 @@ import React, { PropsWithChildren } from 'react';
 import { initTgEnv } from '@/lib/utils/telegram/init-tg-env';
 import { useClientOnce } from '@/lib/utils/telegram/hooks/use-client-once';
 import { useTelegramMock } from '@/lib/utils/telegram/hooks/use-telegram-mock';
-import {
-  miniApp,
-  useLaunchParams,
-  useSignal,
-} from '@telegram-apps/sdk-react';
+import { miniApp, useLaunchParams, useSignal } from '@telegram-apps/sdk-react';
 import { AppRoot } from '@telegram-apps/telegram-ui';
 import { useDidMount } from '@/lib/utils/telegram/hooks/use-did-mount';
 import { ErrorBoundary } from '@/components/error-boundary';
@@ -35,10 +31,7 @@ function Inner({ children }: PropsWithChildren) {
   const isDark = useSignal(miniApp.isDark);
 
   return (
-    <AppRoot
-      appearance={isDark ? 'dark' : 'light'}
-      platform={['macos', 'ios'].includes(lp.platform) ? 'ios' : 'base'}
-    >
+    <AppRoot appearance={isDark ? 'dark' : 'light'} platform={'base'}>
       {children}
     </AppRoot>
   );

@@ -20,7 +20,8 @@ module.exports = {
         primary: 'var(--tg-theme-bg-color)',
         secondary: 'var(--tg-theme-secondary-bg-color)',
         button: 'var(--tg-theme-button-color)',
-        buttonBezeled: 'var(--tgui--secondary_fill)'
+        buttonBezeled: 'var(--tgui--secondary_fill)',
+        divider: 'var(--tgui--divider)'
       },
       borderColor: {
         primary: 'var(--tgui--divider)',

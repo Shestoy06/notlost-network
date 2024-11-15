@@ -1,7 +1,10 @@
 'use client';
 
-import { useEffect, useState, useCallback } from 'react';
-import ForceGraph2D, { NodeObject } from 'react-force-graph-2d';
+import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import ForceGraph2D, {
+  ForceGraphMethods,
+  NodeObject,
+} from 'react-force-graph-2d';
 import data from '@/lib/utils/graph-demo-data.json';
 
 type ImageCache = {
@@ -9,9 +12,15 @@ type ImageCache = {
 };
 
 const ForceGraph = () => {
+  const fgRef = React.useRef<ForceGraphMethods>();
+  useEffect(() => {
+    fgRef?.current?.d3Force('charge')!.distanceMax(80);
+    fgRef?.current?.centerAt(0, 0);
+    fgRef?.current?.zoom(2);
+  }, []);
   const [imageCache, setImageCache] = useState<ImageCache>({});
 
-  useEffect(() => {
+  useMemo(() => {
     const loadImage = (url: string): Promise<HTMLImageElement> => {
       return new Promise((resolve) => {
         const img = new Image();
@@ -90,6 +99,7 @@ const ForceGraph = () => {
         className="absolute h-screen"
       />
       <ForceGraph2D
+        ref={fgRef}
         graphData={data}
         nodeAutoColorBy="group"
         nodeCanvasObject={drawNode}
