@@ -56,9 +56,12 @@ export const FilterByTag = ({
       >
         {buttonText}
       </Button>
-      <Modal isOpen={open} onClose={() => setOpen(false)}>
-        <div className="text-center text-3xl mb-4">Filter by tag</div>
-        <div className="mb-8">
+      <Modal
+        isOpen={open}
+        onClose={() => setOpen(false)}
+        title={'Filter by tag'}
+      >
+        <div className="mb-8 space-x-2">
           {tags.map((tag) => (
             <Button
               mode={'bezeled'}

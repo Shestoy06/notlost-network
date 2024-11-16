@@ -26,4 +26,6 @@ body {
 /* Make plain button text color primary */
 .tgui-48956537c34690db {
     color: var(--tg-theme-text-color);
+    display: block;
+    height: 100%;
 }

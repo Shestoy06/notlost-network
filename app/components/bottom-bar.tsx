@@ -36,7 +36,9 @@ const BottomBarLink: React.FC<BottomBarLinkProps> = ({ to, title, Icon }) => {
     >
       {({ isActive }) => (
         <>
-          <div className="h-6 w-6">
+          <div
+            className={`h-6 w-6 rounded-full transition-all duration-150 ease-in-out ${isActive ? 'bg-buttonBezeled p-[6px] h-8 w-8' : 'bg-transparent'}`}
+          >
             <Icon
               color={
                 isActive

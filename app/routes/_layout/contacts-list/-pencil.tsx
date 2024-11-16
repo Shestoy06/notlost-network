@@ -29,13 +29,11 @@ export const Pencil = () => {
     };
   }, []);
 
-  // used \u00A0 to make buttons text the same length, you can blame me
-  // TODO: configure tgui button for left text align
   return (
     <div className="fixed bottom-20 right-6">
       <div
         ref={tooltipRef}
-        className={`p-2 absolute w-48 right-[8px] bottom-16 bg-primary border-primary border-[1px] rounded-xl transition-opacity ease-in-out duration-150 ${showToolTip ? 'opacity-100' : 'opacity-0'} shadow-lg space-y-2`}
+        className={`p-2 absolute w-48 right-0 bottom-16 bg-primary border-primary border-[1px] rounded-xl transition-opacity ease-in-out duration-150 ${showToolTip ? 'opacity-100' : 'opacity-0'} shadow-lg space-y-2`}
       >
         <ToolTipItem
           icon={personIcon}
@@ -45,7 +43,7 @@ export const Pencil = () => {
         <div className="h-[2px] bg-divider"></div>
         <ToolTipItem
           icon={connectionIcon}
-          title={`New topic${'\u00A0'.repeat(5)}`}
+          title={`New topic`}
           action={() => {}}
         />
       </div>

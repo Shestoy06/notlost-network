@@ -7,7 +7,7 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vinxi dev",
+    "dev": "vinxi dev --host",
     "build": "vinxi build",
     "start": "vinxi start",
     "format": "prettier --write 'app/**/*.{js,jsx,ts,tsx}'"
@@ -24,6 +24,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-force-graph-2d": "^1.25.7",
+    "telegram": "^2.26.5",
     "vinxi": "^0.4.3",
     "vite-tsconfig-paths": "^5.1.2"
   },

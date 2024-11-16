@@ -4,13 +4,7 @@
       "tags": [
         {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
         {"title": "blockchain", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "web3", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "web3", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "blockchain", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"},
-        {"title": "developer", "backgroundColor":  "#FFFF00", "textColor":  "#000"}
+        {"title": "web3", "backgroundColor":  "#FFFF00", "textColor":  "#000"}
       ]
     },
     { "id": "B", "group": 1, "avatar": "https://pics.craiyon.com/2023-11-26/oMNPpACzTtO5OVERUZwh3Q.webp", "username": "Max" },

@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useRef, useState } from 'react';
 import mockData from '@/lib/utils/graph-demo-data.json';
 import { createFileRoute } from '@tanstack/react-router';
@@ -8,6 +10,8 @@ import {
 } from '@/routes/_layout/contacts-list/-filters';
 import { Contact } from '@/routes/_layout/contacts-list/-contact';
 import { Pencil } from '@/routes/_layout/contacts-list/-pencil';
+import {useLaunchParams} from "@telegram-apps/sdk-react";
+import TelegramApiClient from "@/lib/utils/telegram/telegram-api-client";
 
 export interface NodeBody {
   id: string;
@@ -31,12 +35,16 @@ enum FilterOptions {
 }
 
 const Index = () => {
+  const lp = useLaunchParams()
+  console.log(lp.initDataRaw)
   const [filterState, setFilterState] = useState<FilterOptions[]>([]);
   const [searchState, setSearchState] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
   const filtersBlock = useRef<HTMLDivElement>(null);
   const [filtersBlockHeight, setFiltersBlockHeight] = useState<number>(0);
+
+  const [photo, setPhoto] = useState('')
 
   useEffect(() => {
     if (filtersBlock.current) {
@@ -75,8 +83,19 @@ const Index = () => {
     new Set(data.flatMap((node) => node.tags?.map((tag) => tag.title) || [])),
   );
 
+  useEffect(() => {
+    TelegramApiClient.getInstance().initialize().then(() => {
+      TelegramApiClient.getInstance().getPhotos().then((bufferData) => {
+        console.log(bufferData)
+        //@ts-ignore
+        setPhoto(arrayBufferToBase64(bufferData))
+      })
+    })
+  }, []);
+
+
   return (
-    <div className="py-4">
+    <div className="py-4 overflow-hidden">
       <div
         ref={filtersBlock}
         className="pb-4 fixed z-50 w-full bg-primary -mt-4 pl-4 pr-4 shadow-lg border-b-primary border-b-[1px]"
@@ -107,16 +126,32 @@ const Index = () => {
           />
         </div>
       </div>
-      <div className="pb-16" style={{ marginTop: filtersBlockHeight }}>
-        {filteredData.map((node) => {
-          if (node.type === 'topic') return;
-          return <Contact node={node} key={node.id} />;
-        })}
+      <div className="pb-16" style={{ marginTop: filtersBlockHeight - 16 }}>
+        <Contact node={{ "id": "Andrei", "group": 1, "avatar": `${photo ? `data:image/jpeg;base64,${photo}` : 'j'}`, "username": "shestaya_liniya", "description": "Fullstack developer","topic": "Ton Hackathon 2024", "createdAt": new Date(),
+          "tags": [
+            {"title": "developer", "color": ""},
+            {"title": "blockchain", "color": "",},
+            {"title": "web3", "color": ""}
+          ]
+        }} key={'Andrei'} />
+        {filtersBlockHeight > 0 && filteredData.map((node) => {
+            if (node.type === 'topic') return;
+            return <Contact node={node} key={node.id} />;
+          })}
       </div>
       <Pencil />
     </div>
   );
 };
+
+function arrayBufferToBase64(buffer: Uint8Array): string {
+  let binary = '';
+  const bytes = new Uint8Array(buffer);
+  for (let i = 0; i < bytes.length; i++) {
+    binary += String.fromCharCode(bytes[i]);
+  }
+  return window.btoa(binary);
+}
 
 export const Route = createFileRoute('/_layout/contacts-list/')({
   component: Index,
